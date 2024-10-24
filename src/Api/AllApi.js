@@ -2,24 +2,28 @@ import axios from 'axios';
 import {useNavigate } from "react-router-dom";
 
 const login = async (data) => {
-    const LOGIN_ENDPOINT = `http://localhost/event_management/login.php`;
+    const LOGIN_ENDPOINT = `${process.env.REACT_APP_API_URL}/login`;
     try{
-        let response = await axios.post(LOGIN_ENDPOINT, data);
-        console.log(response)
-        if(response.data.jwt){
-            
-            localStorage.setItem("access_token", response.data.jwt);
-            localStorage.setItem("userdata", response.data.datas);
+        let response= await axios({
+            method: 'post',
+            url: LOGIN_ENDPOINT,
+            data: data
+        });
+
+        if(response.data.data.token){
+            localStorage.setItem("access_token", response.data.data.token);
+            localStorage.setItem("userdata", response.data.data.data);
             return true;
         }else{
             return false;
         }
     }catch(e){
-        return false;
+       // return false;
+        console.log(e);
     }
 }
 const register = async (data)=> {
-    const SIGNUP_ENDPOINT = `http://localhost/event_management/register.php`;
+    const SIGNUP_ENDPOINT = `${process.env.REACT_APP_API_URL}/register`;
     try{
         let response= await axios({
             method: 'post',
@@ -27,6 +31,7 @@ const register = async (data)=> {
             url: SIGNUP_ENDPOINT,
             data: data
         });
+        console.log(response);
     } 
     catch(e){
         console.log(e);
@@ -36,4 +41,5 @@ const logout = ()=>{
     localStorage.removeItem("access_token");
     localStorage.removeItem("userdata");
 }
-export  { login, register, logout }
+
+export  { login, register, logout  }
