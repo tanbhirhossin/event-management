@@ -6,63 +6,45 @@ function EventRequest() {
   return (
     <AdminLayout>
        <div className="content-wrapper">
-       <div className="container mt-5">
-    <h2 className="mb-4">Event Request Table</h2>
-    <table className="table table-bordered table-striped">
+       <div class="container my-4">
+    <h2 class="mb-4">Event Details</h2>
+    <table class="table table-striped">
         <thead>
             <tr>
-                <th>#</th>
-                <th>Event Name</th>
-                <th>Date</th>
-                <th>Time</th>
-                <th>Location</th>
-                <th>Status</th>
-                <th>Actions</th>
+                <th scope="col">Event Details</th>
+                <th scope="col">Start Date</th>
+                <th scope="col">Start Time</th>
+                <th scope="col">End Date</th>
+                <th scope="col">End Time</th>
+                <th scope="col">Location</th>
+                <th scope="col">Contact No</th>
+                <th scope="col">Client Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Annual Meeting</td>
-                <td>2024-11-01</td>
-                <td>10:00 AM</td>
-                <td>Main Hall</td>
-                <td><span className="badge bg-success">Approved</span></td>
-                <td>
-                    <button className="btn btn-info btn-sm">View</button>
-                    <button className="btn btn-warning btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Community Workshop</td>
-                <td>2024-11-15</td>
-                <td>2:00 PM</td>
-                <td>Room 101</td>
-                <td><span className="badge bg-warning">Pending</span></td>
-                <td>
-                    <button className="btn btn-info btn-sm">View</button>
-                    <button className="btn btn-warning btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Charity Gala</td>
-                <td>2024-12-05</td>
-                <td>6:00 PM</td>
-                <td>Grand Ballroom</td>
-                <td><span className="badge bg-danger">Rejected</span></td>
-                <td>
-                    <button className="btn btn-info btn-sm">View</button>
-                    <button className="btn btn-warning btn-sm">Edit</button>
-                    <i className="btn btn-danger btn-sm">Delete</i>
-                </td>
-            </tr>
+        {/* {data && data.map((d, key) =>
+                    <tr key={d.id}>
+                        <td>{d.event_details}</td>
+                        <td>{d.event_start_date}</td>
+                        <td>{d.event_start_time}</td>
+                        <td>{d.event_end_date}</td>
+                        <td>{d.event_end_time}</td>
+                        <td>{d.location}</td>
+                        <td>{d.contact_no}</td>
+                        <td>{d.client_name}</td>
+                        <td>
+                            <Link to={`/event_requestedit/${d.id}`} className='btn btn-info' >Edit</Link>
+                            <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                        </td>
+                    </tr>
+                )} */}
+           
         </tbody>
     </table>
 </div>
+
         
         </div>
     </AdminLayout>
