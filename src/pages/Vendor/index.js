@@ -1,8 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminLayout from '../../layouts/AdminLayout';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
-function Vendor() {
-   
+function Vendorlist() {
+  const[data, setData]=useState([]);
+  useEffect(() => {
+    getDatas();
+}, []);
+
+function getDatas() {
+    axios.get(`${process.env.REACT_APP_API_URL}/vendor`).then(function(response) {
+        setData(response.data.data);
+    });
+}
+const deleteData = (id) => {
+    axios.delete(`${process.env.REACT_APP_API_URL}/vendor/${id}`).then(function(response){
+        getDatas();
+    });
+}
+const priority=['','active','inactive','pending']
   return (
     <AdminLayout>
        <div className="content-wrapper">
@@ -11,51 +27,48 @@ function Vendor() {
     <table className="table table-striped table-bordered">
         <thead className="table-dark">
             <tr>
-                <th>ID</th>
                 <th>Vendor Name</th>
                 <th>Contact Person</th>
                 <th>Phone Number</th>
                 <th>Email</th>
+                <th>Address</th>
                 <th>Services Offered</th>
                 <th>Status</th>
                 <th>Actions</th>
+                
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>ABC Catering</td>
-                <td>tanbhit</td>
-                <td>01306452158</td>
-                <td>johndoe@abccatering.com</td>
-                <td>Catering, Food Services</td>
-                <td><span className="badge bg-success">Active</span></td>
-                <td>
-                    <button className="btn btn-primary btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>XYZ Rentals</td>
-                <td>Raju ahmed</td>
-                <td>01236457895</td>
-                <td>janesmith@xyzrentals.com</td>
-                <td>Equipment Rental</td>
-                <td><span className="badge bg-warning">Pending</span></td>
-                <td>
-                    <button className="btn btn-primary btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
-                </td>
-            </tr>
+           
+         {data && data.map((d, key) =>
+                    <tr key={d.id}>
+                        
+                        <td>{d.vendor_name}</td>
+                        <td>{d.contact_persone}</td>
+                        <td>{d.phone_no}</td>
+                        <td>{d.email}</td>
+                        <td>{d.address}</td>
+                        <td>{d.service}</td>
+                        <td>{priority[d.status]}</td>
+                        
+                        
+                        <td>
+                            <Link to={`/vendoredit/${d.id}`} className='btn btn-info' >Edit</Link>
+                            <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                        </td>
+                    </tr>
+                )}
+        
            
         </tbody>
-        <Link to='/Vendoreadd' className="btn btn-primary">Add vendor</Link>
+       
     </table>
+      <Link to='/Vendoreadd' className="btn btn-primary">Add vendor</Link>
+
 </div>
        </div>
     </AdminLayout>
   )
 }
 
-export default Vendor
+export default Vendorlist

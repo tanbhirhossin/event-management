@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+
 import AdminLayout from '../../layouts/AdminLayout';
-// import TaskManagment from './pages/TaskManagment'
+import { Link } from 'react-router-dom';
 function EventRequest() {
-   
+    const[data, setData]=useState([]);
+    useEffect(() => {
+        getDatas();
+    }, []);
+
+    function getDatas() {
+        axios.get(`${process.env.REACT_APP_API_URL}/event_request`).then(function(response) {
+            setData(response.data.data);
+        });
+    }
+    const deleteData = (id) => {
+        axios.delete(`${process.env.REACT_APP_API_URL}/event_request/${id}`).then(function(response){
+            getDatas();
+        });
+    }
   return (
     <AdminLayout>
        <div className="content-wrapper">
        <div class="container my-4">
-    <h2 class="mb-4">Event Details</h2>
+    <h2 class="mb-4">Event Request</h2>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -19,12 +35,11 @@ function EventRequest() {
                 <th scope="col">Location</th>
                 <th scope="col">Contact No</th>
                 <th scope="col">Client Name</th>
-                <th scope="col">Status</th>
                 <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
-        {/* {data && data.map((d, key) =>
+        {data && data.map((d, key) =>
                     <tr key={d.id}>
                         <td>{d.event_details}</td>
                         <td>{d.event_start_date}</td>
@@ -39,7 +54,7 @@ function EventRequest() {
                             <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                         </td>
                     </tr>
-                )} */}
+                )}
            
         </tbody>
     </table>

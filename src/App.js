@@ -4,6 +4,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Protected from './components/protected';
+
 import Home from './pages/Home';
 
 import Timeline from './pages/Timeline';
@@ -34,6 +35,10 @@ function App() {
     <BrowserRouter>
         <Routes>
           <Route path="/home" element={<Home />} />
+
+
+
+          
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />
         } />
@@ -139,7 +144,11 @@ function App() {
               <Vendoreadd /> 
            </Protected>
            } />
-          
+          <Route path= {"/vendoredit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Vendoreadd /> 
+           </Protected>
+           } />
           
         </Routes>
       </BrowserRouter>

@@ -34,18 +34,18 @@ p {
 }
 
 h1
-{
-  font-family: "Raleway", sans-serif;
-  font-weight: 400;
-  margin: 0 0 20px 0;
-  padding: 0;
-  color: #f2f4f8;
-}
+
 h2,
 h3,
 h4,
 h5,
-h6 
+h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+  color: #0f0f0f;
+}
 
 .main-page {
   margin-top: 70px;
@@ -165,7 +165,7 @@ h6
 }
 
 #header #logo h1 span {
-  color: #f82249;
+  color: #1a1818;
 }
 
 #header #logo h1 a,
