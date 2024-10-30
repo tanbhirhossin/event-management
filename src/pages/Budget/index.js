@@ -27,7 +27,7 @@ function Budget() {
        <div className="content-wrapper">
        <div className="container mt-5">
         <h2 className="mb-4" align="center"> Budget Details</h2>
-        <h2 className="mb-4" align="center">Event Name : IsDB anuale conference</h2>
+        <h2 className="mb-4" align="center">Event Name : IsDB annual conference</h2>
         <table className="table table-striped table-bordered">
             <thead>
                 <tr>

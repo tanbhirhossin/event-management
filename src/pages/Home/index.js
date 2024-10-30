@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 function Home() {
   const [inputs, setInputs] = useState({ id: '', event_details: '', event_start_date: '', event_start_time: '', event_end_date: '', event_end_time: '', location: '', contact_no: '', client_name: '' });
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -114,7 +114,7 @@ function Home() {
 
 
             <div className="container mt-5">
-              <h2>Event Details Form</h2>
+              <h2>Event Details</h2>
               <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                   <label for="eventDetails" className="form-label">Event Details</label>
