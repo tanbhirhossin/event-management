@@ -1,8 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminLayout from '../../layouts/AdminLayout';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 function Timeline() {
-   
+    const[data, setData]=useState([]);
+    useEffect(() => {
+        getDatas();
+    }, []);
+
+    function getDatas() {
+        axios.get(`${process.env.REACT_APP_API_URL}/timeline`).then(function(response) {
+            setData(response.data.data);
+        });
+    }
+    const deleteData = (id) => {
+        axios.delete(`${process.env.REACT_APP_API_URL}/timeline/${id}`).then(function(response){
+            getDatas();
+        });
+    }
   return (
     <AdminLayout>
        <div className="content-wrapper">
@@ -19,7 +34,7 @@ function Timeline() {
     <table className="table table-bordered">
         <thead className="table-light">
             <tr>
-                <th>ID</th>
+                
                 <th>Project Name</th>
                 <th>Date</th>
                 <th>Time</th>
@@ -30,47 +45,25 @@ function Timeline() {
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>Annual Tech Conference</td>
-                <td>2024-05-15</td>
-                <td>09:00 AM</td>
-                <td>New York Convention Center</td>
-                <td>John Doe</td>
-                <td>(123) 456-7890</td>
-                <td>
-                    <button className="btn btn-primary btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Marketing Workshop</td>
-                <td>2024-06-20</td>
-                <td>01:00 PM</td>
-                <td>Los Angeles Conference Hall</td>
-                <td>Jane Smith</td>
-                <td>(098) 765-4321</td>
-                <td>
-                    <button className="btn btn-primary btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
-                </td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Web Development Bootcamp</td>
-                <td>2024-07-10</td>
-                <td>10:00 AM</td>
-                <td>San Francisco Tech Hub</td>
-                <td>Emily Johnson</td>
-                <td>(555) 123-4567</td>
-                <td>
-                    <button className="btn btn-primary btn-sm">Edit</button>
-                    <button className="btn btn-danger btn-sm">Delete</button>
-                </td>
-            </tr>
-          
-        </tbody>
+                {data && data.map((d, key) =>
+                    <tr key={d.id}>
+                        
+                        <td>{d.project_name}</td>
+                        <td>{d.date}</td>
+                        <td>{d.time}</td>
+                        <td>{d.location}</td>
+                        <td>{d.client_name}</td>
+                        <td>{d.contact_no}</td>
+                       
+                        
+                        <td>
+                            <Link to={`/timelineedit/${d.id}`} className='btn btn-info' >Edit</Link>
+                            <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                        </td>
+                    </tr>
+                )}
+            </tbody>
+
         <Link to='/Timelineadd' className="btn btn-primary">Add New</Link>
     </table>
 </div>

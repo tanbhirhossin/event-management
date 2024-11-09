@@ -30,32 +30,71 @@ function Sidebar(){
             <li className="treeview">
             <Link to="/TaskManagement">
                 <h4>
-               
                 <span>Task management</span>
                 <i className="fa fa-angle-left pull-right"></i>
                 </h4>
-
               </Link>
-            
             </li>
+
+            <li className="treeview">
+            <Link to="/Event">
+                <h4>
+                <span>Event</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
+
+            <li className="treeview">
+            <Link to="/EventTask">
+                <h4>
+                <span>Event Task</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
+
+           
+
+
+            <li className="treeview">
+            <Link to="/EventExpense">
+                <h4>
+                <span>Event Expense</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
+
+
+
+
+            <li className="treeview">
+            <Link to="/Employee">
+                <h4>
+                <span>Employee</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
+
+
+
+
             <li>
               <Link to="/Budget"><h4>
               <i className="fa fa-angle-left pull-right"></i>
                 <span>Budget Tracking</span></h4>
-                
               </Link>
             </li>
            
             <li className="treeview">
               <Link to="/EventList">
                 <h4>
-               
                 <span>Event list</span>
                 <i className="fa fa-angle-left pull-right"></i>
                 </h4>
-
               </Link>
-             
             </li>
             
             <li className="treeview">
@@ -72,44 +111,43 @@ function Sidebar(){
               <Link to="/Vendor">
                 <h4>
                 {/* <i className="fa fa-table"></i> */}
-
                  <span>Vendore management</span>
                 <i className="fa fa-angle-left pull-right"></i>
                 </h4>
               </Link>
-              
             </li>
+
 
             <li>
               <Link to="/EventRequest"><h4>
               <i className="fa fa-angle-left pull-right"></i>
                 <span>Event Request</span></h4>
-                
               </Link>
             </li>
+
 
             <li className="treeview">
               <Link to="/Timeline">
               <h4>
-               
                 <span>Timeline</span>
                 <i className="fa fa-angle-left pull-right"></i>
                 </h4>
               </Link>
-              
             </li>
 
-           
-            <li>
-              <Link to ="/Calendar">
-             
-                {/* <i className="fa fa-calendar"></i>  */}
-                <span><h4>Calendar</h4></span>
-                <small className="label pull-right bg-red"></small>
-              
+            <li className="treeview">
+              <Link to="/payment">
+              <h4>
+                <span>Payment</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
               </Link>
             </li>
+
+
+           
             
+
           </ul>
         </section>
        

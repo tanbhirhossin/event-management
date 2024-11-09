@@ -62,7 +62,7 @@ function Taskadd() {
         <form  onSubmit={handleSubmit}>
         <div className="mb-3">
                 <label for="taskInput" className="form-label">Event Name</label>
-                <input type="text" className="form-control" defaultValue={inputs.eventname} name="eventname" onChange={handleChange} id="taskInput" placeholder="Enter event name"/>
+                <input type="text" className="form-control" defaultValue={inputs.eventname} onChange={handleChange} name="eventname"  id="taskInput" placeholder="Enter event name"/>
             </div>
 
             <div className="mb-3">

@@ -24,6 +24,21 @@ import EventRequest from './pages/EventRequest';
 import Vendor from './pages/Vendor';
 import Vendoreadd from './pages/Vendor/Vendoreadd';
 
+import Event from './pages/Event';
+import Eventadd from './pages/Event/Eventadd';
+
+import Employee from './pages/Employee';
+import Employeeadd from './pages/Employee/Employeeadd';
+
+import EventTask from './pages/EventTask';
+import EventTaskadd from './pages/EventTask/EventTaskadd';
+
+import EventExpense from './pages/EventExpense';
+import Expenseadd from './pages/EventExpense/Expenseadd';
+
+import payment from './pages/payment';
+import Paymentcal from './pages/payment/Paymentcal';
+
 
 
 
@@ -69,6 +84,22 @@ function App() {
            </Protected>
            } />
 
+          <Route path= {"/EventTask"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <EventTask /> 
+           </Protected>
+           } />
+           <Route path= {"/EventTaskadd"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <EventTaskadd /> 
+           </Protected>
+           } />
+           <Route path= {"/eventtaskedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Taskadd /> 
+           </Protected>
+           } />
+
            
 
 
@@ -82,7 +113,79 @@ function App() {
               <Timelineadd /> 
            </Protected>
            } />
-          
+          <Route path= {"/timelineedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Timelineadd /> 
+           </Protected>
+           } />
+
+
+          <Route path= {"/Event"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Event /> 
+           </Protected>
+           } />
+          <Route path= {"/Eventadd"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Eventadd /> 
+           </Protected>
+           } />
+          <Route path= {"/eventedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Event /> 
+           </Protected>
+           } />
+
+
+          <Route path= {"/Employee"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Employee /> 
+           </Protected>
+           } />
+          <Route path= {"/Employeeadd"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Employeeadd /> 
+           </Protected>
+           } />
+          <Route path= {"/employeeedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Employee /> 
+           </Protected>
+           } />
+
+
+          <Route path= {"/EventExpense"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <EventExpense /> 
+           </Protected>
+           } />
+          <Route path= {"/Expenseadd"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Expenseadd /> 
+           </Protected>
+           } />
+          <Route path= {"/expenseedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Expenseadd /> 
+           </Protected>
+           } />
+
+
+          <Route path= {"/payment"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <payment /> 
+           </Protected>
+           } />
+          <Route path= {"/Paymentcal"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Paymentcal /> 
+           </Protected>
+           } />
+          <Route path= {"/paymentedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              < Protected/> 
+           </Protected>
+           } />
 
 
 
