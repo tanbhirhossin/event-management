@@ -25,15 +25,6 @@ function Sidebar(){
                 <i className="fa fa-dashboard"></i> <span>Dashboard</span> <i className="fa fa-angle-left pull-right"></i>
                 </h2>
               </Link>
-             
-            </li>
-            <li className="treeview">
-            <Link to="/TaskManagement">
-                <h4>
-                <span>Task management</span>
-                <i className="fa fa-angle-left pull-right"></i>
-                </h4>
-              </Link>
             </li>
 
             <li className="treeview">
@@ -45,6 +36,14 @@ function Sidebar(){
               </Link>
             </li>
 
+            <li>
+              <Link to="/EventRequest"><h4>
+              <i className="fa fa-angle-left pull-right"></i>
+                <span>Event Request</span></h4>
+              </Link>
+            </li>
+
+
             <li className="treeview">
             <Link to="/EventTask">
                 <h4>
@@ -53,8 +52,6 @@ function Sidebar(){
                 </h4>
               </Link>
             </li>
-
-           
 
 
             <li className="treeview">
@@ -66,7 +63,15 @@ function Sidebar(){
               </Link>
             </li>
 
-
+            <li className="treeview">
+              <Link to="/Vendor">
+                <h4>
+                {/* <i className="fa fa-table"></i> */}
+                 <span>Vendore management</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
 
 
             <li className="treeview">
@@ -79,6 +84,43 @@ function Sidebar(){
             </li>
 
 
+            <li className="treeview">
+              <Link to="/payment">
+              <h4>
+                <span>Payment</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
+
+            
+            <li className="treeview">
+              <Link to="/Timeline">
+              <h4>
+                <span>Timeline</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
+            
+
+           
+
+           
+
+
+           
+
+
+
+            <li className="treeview">
+            <Link to="/TaskManagement">
+                <h4>
+                <span>Task management</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
 
 
             <li>
@@ -88,6 +130,7 @@ function Sidebar(){
               </Link>
             </li>
            
+            
             <li className="treeview">
               <Link to="/EventList">
                 <h4>
@@ -107,47 +150,7 @@ function Sidebar(){
               </Link>
               
             </li>
-            <li className="treeview">
-              <Link to="/Vendor">
-                <h4>
-                {/* <i className="fa fa-table"></i> */}
-                 <span>Vendore management</span>
-                <i className="fa fa-angle-left pull-right"></i>
-                </h4>
-              </Link>
-            </li>
-
-
-            <li>
-              <Link to="/EventRequest"><h4>
-              <i className="fa fa-angle-left pull-right"></i>
-                <span>Event Request</span></h4>
-              </Link>
-            </li>
-
-
-            <li className="treeview">
-              <Link to="/Timeline">
-              <h4>
-                <span>Timeline</span>
-                <i className="fa fa-angle-left pull-right"></i>
-                </h4>
-              </Link>
-            </li>
-
-            <li className="treeview">
-              <Link to="/payment">
-              <h4>
-                <span>Payment</span>
-                <i className="fa fa-angle-left pull-right"></i>
-                </h4>
-              </Link>
-            </li>
-
-
-           
             
-
           </ul>
         </section>
        
