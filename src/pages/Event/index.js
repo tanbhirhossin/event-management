@@ -44,7 +44,7 @@ const deleteData = (id) => {
          {data && data.map((d, key) =>
                     <tr key={d.id}>
                         
-                        <td>{d.client_id}</td>
+                        <td>{d.client?.name}</td>
                         <td>{d.event_details}</td>
                         <td>{d.event_start_date}</td>
                         <td>{d.event_start_time}</td>
@@ -67,7 +67,7 @@ const deleteData = (id) => {
         </tbody>
        
     </table>
-      <Link to='/Eventadd' className="btn btn-primary">Add vendor</Link>
+      <Link to='/Eventadd' className="btn btn-primary">Add Event</Link>
 
 </div>
        </div>

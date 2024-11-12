@@ -6,6 +6,8 @@ import {useParams} from "react-router-dom";
 
 function EventTaskadd() {
     const [inputs, setInputs] = useState({id:'',event_id:'',employee_id:'',task:'',assign_date:'', finish_date:'',cost:''});
+    const [event, setEvent] = useState([]);
+
     const navigate=useNavigate();
     const {id} = useParams();
     
@@ -13,8 +15,13 @@ function EventTaskadd() {
         axios.get(`${process.env.REACT_APP_API_URL}/eventtask/${id}`).then(function(response) {
             setInputs(response.data.data);
             
-          
+        });
 
+    }
+
+    function get_relation(){
+        axios.get(`${process.env.REACT_APP_API_URL}/event`).then(function(response) {
+            setEvent(response.data.data);
         });
     }
 
@@ -22,6 +29,7 @@ function EventTaskadd() {
         if(id){
             getDatas();
         }
+        get_relation()
     }, []);
 
     const handleChange = (event) => {
@@ -64,7 +72,15 @@ function EventTaskadd() {
 
         <div className="mb-3">
             <label for="event_id" className="form-label">Event</label>
-            <input type="text" className="form-control" defaultValue={inputs.event_id} name="event_id" onChange={handleChange} id="event_id" placeholder="Enter Event ID" required/>
+            {event.length > 0 && 
+                <select className="form-control" id="event_id" name='event_id' defaultValue={inputs.event_id} onChange={handleChange}>
+                    <option value="">Select event </option>
+                    {event.map((d, key) =>
+                    <option value={d.id}>{d.client_id}</option>
+                    )}
+                </select>
+                    }
+            {/* <input type="text" className="form-control" defaultValue={inputs.event_id} name="event_id" onChange={handleChange} id="event_id" placeholder="Enter Event ID" required/> */}
         </div>
 
         <div className="mb-3">

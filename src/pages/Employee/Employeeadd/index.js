@@ -61,7 +61,7 @@ function Employeeadd() {
     <form  onSubmit={handleSubmit}>
 
         <div className="mb-3">
-            <label for="client_id" className="form-label">User Id</label>
+            <label for="client_id" className="form-label">User</label>
             <input type="text" className="form-control" defaultValue={inputs.user_id} name="user_id" onChange={handleChange} id="client_id" required/>
         </div>
         <div className="mb-3">

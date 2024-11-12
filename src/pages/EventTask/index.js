@@ -23,7 +23,7 @@ const deleteData = (id) => {
     <AdminLayout>
        <div className="content-wrapper">
        <div className="container mt-5">
-    <h2 className="mb-4">Event list</h2>
+    <h2 className="mb-4">Event Task</h2>
     <table className="table table-striped table-bordered">
         <thead className="table-dark">
             <tr>
@@ -42,7 +42,7 @@ const deleteData = (id) => {
          {data && data.map((d, key) =>
                     <tr key={d.id}>
                         
-                        <td>{d.event_id}</td>
+                        <td>{d.event?.client_id}</td>
                         <td>{d.employee_id}</td>
                         <td>{d.task}</td>
                         <td>{d.assign_date}</td>

@@ -28,6 +28,16 @@ function Sidebar(){
             </li>
 
             <li className="treeview">
+            <Link to="/Client">
+                <h4>
+                <span>Client Details</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li>
+
+
+            <li className="treeview">
             <Link to="/Event">
                 <h4>
                 <span>Event</span>
@@ -85,7 +95,7 @@ function Sidebar(){
 
 
             <li className="treeview">
-              <Link to="/payment">
+              <Link to="/Payment">
               <h4>
                 <span>Payment</span>
                 <i className="fa fa-angle-left pull-right"></i>

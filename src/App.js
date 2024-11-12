@@ -36,8 +36,11 @@ import EventTaskadd from './pages/EventTask/EventTaskadd';
 import EventExpense from './pages/EventExpense';
 import Expenseadd from './pages/EventExpense/Expenseadd';
 
-import payment from './pages/payment';
-import Paymentcal from './pages/payment/Paymentcal';
+import Payment from './pages/Payment'; 
+import Paymentcount from './pages/Payment/Paymentcount'; 
+
+import Client from './pages/Client'; 
+import Clientadd from './pages/Client/Clientadd'; 
 
 
 
@@ -64,6 +67,43 @@ function App() {
               <Dashboard /> 
            </Protected>
            } />
+
+
+          <Route path= {"/Payment"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Payment /> 
+           </Protected>
+           } />
+          <Route path= {"/Paymentcount"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Paymentcount /> 
+           </Protected>
+           } />
+          <Route path= {"/Paymentedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Paymentcount /> 
+           </Protected>
+           } />
+
+
+          <Route path= {"/Client"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Client /> 
+           </Protected>
+           } />
+          <Route path= {"/Clientadd"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Clientadd /> 
+           </Protected>
+           } />
+          <Route path= {"/Clientedit/:id"} element={
+            <Protected  isSignedIn= {isSignedIn} >
+              <Clientadd /> 
+           </Protected>
+           } />
+
+
+
 
 
 
@@ -171,21 +211,7 @@ function App() {
            } />
 
 
-          <Route path= {"/payment"} element={
-            <Protected  isSignedIn= {isSignedIn} >
-              <payment /> 
-           </Protected>
-           } />
-          <Route path= {"/Paymentcal"} element={
-            <Protected  isSignedIn= {isSignedIn} >
-              <Paymentcal /> 
-           </Protected>
-           } />
-          <Route path= {"/paymentedit/:id"} element={
-            <Protected  isSignedIn= {isSignedIn} >
-              < Protected/> 
-           </Protected>
-           } />
+          
 
 
 

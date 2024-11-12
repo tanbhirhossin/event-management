@@ -4,23 +4,31 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate } from 'react-router-dom';
 import {useParams} from "react-router-dom";
 
-function Vendoreadd() {
+function Event() {
     const [inputs, setInputs] = useState({id:'',client_id:'',event_details:'',event_start_date:'',event_start_time:'', event_end_date:'',event_end_time:'',location:'',contact_no:'',event_cost:''});
+    const [client, setClient] = useState([]);
+
     const navigate=useNavigate();
     const {id} = useParams();
     
     function getDatas(){
         axios.get(`${process.env.REACT_APP_API_URL}/event/${id}`).then(function(response) {
             setInputs(response.data.data);
-            
-            
         });
     }
+
+    function get_relation(){
+        axios.get(`${process.env.REACT_APP_API_URL}/client`).then(function(response) {
+            setClient(response.data.data);
+        });
+    }
+
 
     useEffect(() => {
         if(id){
             getDatas();
         }
+        get_relation()
     }, []);
 
     const handleChange = (event) => {
@@ -57,11 +65,19 @@ function Vendoreadd() {
     <AdminLayout>
        <div className="content-wrapper">
        <div className="container mt-5">
-    <h2 className="mb-4">Vendor Information Form</h2>
+    <h2 className="mb-4">Event Information Form</h2>
     <form onSubmit={handleSubmit}>
         <div className="mb-3">
-            <label for="client_id" className="form-label">Client ID</label>
-            <input type="text" className="form-control" defaultValue={inputs.client_id} onChange={handleChange} name="client_id" id="client_id" placeholder="Enter Client ID" required/>
+            <label for="client_id" className="form-label">Client</label>
+            {client.length > 0 && 
+                <select className="form-control" id="client_id" name='client_id' defaultValue={inputs.client_id} onChange={handleChange}>
+                    <option value="">Select event </option>
+                    {client.map((d, key) =>
+                    <option value={d.id}>{d.name}</option>
+                    )}
+                </select>
+                    }
+            {/* <input type="text" className="form-control" defaultValue={inputs.client_id} onChange={handleChange} name="client_id" id="client_id" placeholder="Enter Client ID" required/> */}
         </div>
 
         <div className="mb-3">
@@ -123,4 +139,4 @@ function Vendoreadd() {
   )
 }
 
-export default Vendoreadd
+export default Event

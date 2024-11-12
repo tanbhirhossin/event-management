@@ -57,7 +57,7 @@ const deleteData = (id) => {
         </tbody>
        
     </table>
-      <Link to='/Expenseadd' className="btn btn-primary">Add task</Link>
+      <Link to='/Expenseadd' className="btn btn-primary">Add Expense</Link>
 
 </div>
        </div>
