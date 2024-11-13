@@ -64,6 +64,16 @@ function Sidebar(){
             </li>
 
 
+            {/* <li className="treeview">
+            <Link to="/Purchase">
+                <h4>
+                <span>Purchase</span>
+                <i className="fa fa-angle-left pull-right"></i>
+                </h4>
+              </Link>
+            </li> */}
+
+
             <li className="treeview">
             <Link to="/EventExpense">
                 <h4>

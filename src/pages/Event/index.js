@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AdminLayout from '../../layouts/AdminLayout';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-function Vendorlist() {
+function Event() {
   const[data, setData]=useState([]);
   useEffect(() => {
     getDatas();
@@ -27,7 +27,7 @@ const deleteData = (id) => {
     <table className="table table-striped table-bordered">
     <thead>
             <tr>
-                <th scope="col">Client ID</th>
+                <th scope="col">Client </th>
                 <th scope="col">Event Details</th>
                 <th scope="col">Event Start Date</th>
                 <th scope="col">Event Start Time</th>
@@ -57,7 +57,7 @@ const deleteData = (id) => {
                         
                         
                         <td>
-                            <Link to={`/eventedit/${d.id}`} className='btn btn-info' >Edit</Link>
+                        <Link to={`/eventedit/${d.id}`} className='btn btn-info' >Edit</Link>
                             <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                         </td>
                     </tr>
@@ -75,4 +75,4 @@ const deleteData = (id) => {
   )
 }
 
-export default Vendorlist
+export default Event

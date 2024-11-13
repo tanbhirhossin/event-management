@@ -41,11 +41,11 @@ const deleteData = (id) => {
          {data && data.map((d, key) =>
                     <tr key={d.id}>
                         
-                        <td>{d.vendor_id}</td>
+                        <td>{d.vendor?.vendor_name}</td>
                         <td>{d.pay_date}</td>
                         <td>{d.pay_amount}</td>
-                        <td>{d.event_expense_id}</td>
-                        <td>{d.client_id}</td>
+                        <td>{d.expense?.event_id}</td>
+                        <td>{d.client?.name}</td>
                         
                         
                         <td>
