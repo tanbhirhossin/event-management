@@ -55,6 +55,45 @@ function Sidebar() {
 
 
           <li className="treeview">
+            <Link to="/Vendor">
+              <h4>
+                {/* <i className="fa fa-table"></i> */}
+                <span>Vendore management</span>
+                <i className="fa fa-angle-left pull-right"></i>
+              </h4>
+            </Link>
+          </li>
+
+          <li className="treeview">
+            <Link to="/EventExpense">
+              <h4>
+                <span>Event Expense</span>
+                <i className="fa fa-angle-left pull-right"></i>
+              </h4>
+            </Link>
+          </li>
+
+          
+          <li className="treeview">
+            <Link to="/Payment">
+              <h4>
+                <span>Client Payment</span>
+                <i className="fa fa-angle-left pull-right"></i>
+              </h4>
+            </Link>
+          </li>
+
+          <li className="treeview">
+            <Link to="/Timeline">
+              <h4>
+                <span>Timeline</span>
+                <i className="fa fa-angle-left pull-right"></i>
+              </h4>
+            </Link>
+          </li>
+
+
+          <li className="treeview">
             <Link to="/EventTask">
               <h4>
                 <span>Event Task</span>
@@ -74,24 +113,9 @@ function Sidebar() {
             </li> */}
 
 
-          <li className="treeview">
-            <Link to="/EventExpense">
-              <h4>
-                <span>Event Expense</span>
-                <i className="fa fa-angle-left pull-right"></i>
-              </h4>
-            </Link>
-          </li>
+         
 
-          <li className="treeview">
-            <Link to="/Vendor">
-              <h4>
-                {/* <i className="fa fa-table"></i> */}
-                <span>Vendore management</span>
-                <i className="fa fa-angle-left pull-right"></i>
-              </h4>
-            </Link>
-          </li>
+         
 
 
           <li className="treeview">
@@ -104,25 +128,9 @@ function Sidebar() {
           </li>
 
 
-          <li className="treeview">
-            <Link to="/Payment">
-              <h4>
-                <span>Client Payment</span>
-                <i className="fa fa-angle-left pull-right"></i>
-              </h4>
-            </Link>
-          </li>
 
 
-          <li className="treeview">
-            <Link to="/Timeline">
-              <h4>
-                <span>Timeline</span>
-                <i className="fa fa-angle-left pull-right"></i>
-              </h4>
-            </Link>
-          </li>
-
+        
 
           <li className="treeview">
             <Link to="/TaskManagement">
@@ -142,25 +150,23 @@ function Sidebar() {
           </li>
 
 
-          <li className="treeview">
+          {/* <li className="treeview">
             <Link to="/EventList">
               <h4>
                 <span>Event list</span>
                 <i className="fa fa-angle-left pull-right"></i>
               </h4>
             </Link>
-          </li>
-
+          </li> */}
+{/* 
           <li className="treeview">
             <Link to="/Form">
               <h4>
-                {/* <i className="fa fa-edit"></i> */}
                 <span>Forms</span>
                 <i className="fa fa-angle-left pull-right"></i>
               </h4>
             </Link>
-
-          </li>
+          </li> */}
 
         </ul>
       </section>

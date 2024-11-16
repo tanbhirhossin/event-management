@@ -47,7 +47,7 @@ function EventExpense() {
                                     <td>{d.discount}</td>
                                     <td>{d.vendor?.vendor_name}</td>
                                     <td>
-                                        <Link to={`/expenseedit/${d.id}`} className='btn btn-info' >Edit</Link>
+                                    <Link to={`/Paynow/${d.id}`} className='btn btn-primary' >Pay Now</Link>
                                         <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                     </td>
                                 </tr>

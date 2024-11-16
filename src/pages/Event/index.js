@@ -23,7 +23,7 @@ function Event() {
         <AdminLayout>
             <div className="content-wrapper">
                 <div className="container mt-5">
-                    <h2 className="mb-4">Add Event</h2>
+                    <h2 className="mb-4">Event Details List</h2>
                     <table className="table table-striped table-bordered">
                         <thead>
                             <tr>

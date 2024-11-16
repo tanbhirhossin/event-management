@@ -36,6 +36,7 @@ import EventTaskadd from './pages/EventTask/EventTaskadd';
 
 import EventExpense from './pages/EventExpense';
 import Expenseadd from './pages/EventExpense/Expenseadd';
+import Paynow from './pages/EventExpense/Paynow';
 
 import Payment from './pages/Payment';
 import Paymentcount from './pages/Payment/Paymentcount';
@@ -210,7 +211,7 @@ function App() {
             <Expenseadd />
           </Protected>
         } />
-        <Route path={"/expenseedit/:id"} element={
+        <Route path={"/Paynow"} element={
           <Protected isSignedIn={isSignedIn} >
             <Expenseadd />
           </Protected>
