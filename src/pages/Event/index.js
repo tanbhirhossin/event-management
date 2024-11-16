@@ -36,6 +36,8 @@ function Event() {
                                 <th scope="col">Location</th>
                                 <th scope="col">Contact No.</th>
                                 <th scope="col">Event Cost</th>
+                                <th scope="col">Event Amount</th>
+                                <th scope="col">Event Profit</th>
                                 <th scope="col">Action</th>
                             </tr>
                         </thead>
@@ -52,9 +54,11 @@ function Event() {
                                     <td>{d.event_end_time}</td>
                                     <td>{d.location}</td>
                                     <td>{d.contact_no}</td>
+                                    <td>{d.expense_sum_total_amount}</td>
                                     <td>{d.event_cost}</td>
+                                    <td>{d.event_cost - d.expense_sum_total_amount}</td>
                                     <td>
-                                        <Link to={`/Paymentcount/${d.id}`} className='btn btn-primary' >Purchase</Link>
+                                        <Link to={`/event/purchase/${d.id}`} className='btn btn-primary' >Purchase</Link>
                                         <Link to={`/eventedit/${d.id}`} className='btn btn-info' >Edit</Link>
                                         <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                     </td>

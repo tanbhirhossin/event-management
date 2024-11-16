@@ -26,6 +26,7 @@ import Vendoreadd from './pages/Vendor/Vendoreadd';
 
 import Event from './pages/Event';
 import Eventadd from './pages/Event/Eventadd';
+import Purchase from './pages/Event/Purchase';
 
 import Employee from './pages/Employee';
 import Employeeadd from './pages/Employee/Employeeadd';
@@ -74,7 +75,7 @@ function App() {
             <Payment />
           </Protected>
         } />
-        <Route path={"/Paymentcount/:event_id"} element={
+        <Route path={"/Paymentcount"} element={
           <Protected isSignedIn={isSignedIn} >
             <Paymentcount />
           </Protected>
@@ -172,7 +173,12 @@ function App() {
         } />
         <Route path={"/eventedit/:id"} element={
           <Protected isSignedIn={isSignedIn} >
-            <Event />
+            <Eventadd />
+          </Protected>
+        } />
+        <Route path={"/event/purchase/:event_id"} element={
+          <Protected isSignedIn={isSignedIn} >
+            <Purchase />
           </Protected>
         } />
 
@@ -209,13 +215,6 @@ function App() {
             <Expenseadd />
           </Protected>
         } />
-
-
-
-
-
-
-
 
 
 
