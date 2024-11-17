@@ -33,9 +33,10 @@ const priority=['','active','inactive','pending']
                 <th>Email</th>
                 <th>Address</th>
                 <th>Services Offered</th>
-                <th>Status</th>
+                {/* <th>Status</th> */}
+                <th>Due</th>
                 <th>Actions</th>
-                
+                 
             </tr>
         </thead>
         <tbody>
@@ -49,7 +50,8 @@ const priority=['','active','inactive','pending']
                         <td>{d.email}</td>
                         <td>{d.address}</td>
                         <td>{d.service}</td>
-                        <td>{priority[d.status]}</td>
+                        {/* <td>{priority[d.status]}</td> */}
+                        <td>{d.expense_sum_total_amount	- d.payment_sum_pay_amount	}</td>
                         
                         
                         <td>

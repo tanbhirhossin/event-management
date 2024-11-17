@@ -49,7 +49,7 @@ function Paynow() {
         data: inputs
       });
       console.log(response)
-      navigate('/Payment');// route from app.js
+      navigate('/EventExpense');// route from app.js
     }
     catch (e) {
       console.log(e);
