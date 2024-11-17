@@ -84,7 +84,7 @@ function Vendoreadd() {
             <label for="services" className="form-label">Services</label>
             <textarea className="form-control" defaultValue={inputs.service} name="service" onChange={handleChange} id="services" rows="3" required></textarea>
         </div>
-        <div className="mb-3">
+        {/* <div className="mb-3">
             <label for="status" className="form-label">Status</label>
             <select className="form-select" defaultValue={inputs.status} name="status" onChange={handleChange} id="prioritystatusSelect" required>
                 <option value="" disabled selected>Select Status</option>
@@ -92,7 +92,7 @@ function Vendoreadd() {
                 <option value="inactive">Inactive</option>
                 <option value="pending">Pending</option>
             </select>
-        </div>
+        </div> */}
         <button type="submit" className="btn btn-primary">Submit</button>
     </form>
 </div>

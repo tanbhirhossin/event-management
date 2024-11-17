@@ -47,7 +47,7 @@ function Payment() {
                                             <td>{d.pay_amount}</td>
                                             <td>{d.event?.event_details}</td>
                                             <td>
-                                                <Link to={`/Paymentcount/${d.id}`} className='btn btn-info' >Pay Now</Link>
+                                                <Link to={`/paymentedit/${d.id}`} className='btn btn-info' >Edit</Link>
                                                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
                                             </td>
                                         </tr>
@@ -60,7 +60,7 @@ function Payment() {
                         </tbody>
 
                     </table>
-                    <Link to='/Paymentcount' className="btn btn-primary">Payment count</Link>
+                    <Link to='/Paymentcount' className="btn btn-primary">Pay Now</Link>
 
                 </div>
             </div>

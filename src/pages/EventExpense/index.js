@@ -28,7 +28,7 @@ function EventExpense() {
                         <thead className="table-dark">
                             <tr>
                                 <th>Event</th>
-                                <th>Employee</th>
+                                {/* <th>Employee</th> */}
                                 <th>Total Amount</th>
                                 <th>discount</th>
                                 <th>vendore</th>
@@ -42,7 +42,7 @@ function EventExpense() {
                                 <tr key={d.id}>
 
                                     <td>{d.event?.event_details}</td>
-                                    <td>{d.employee?.name}</td>
+                                    {/* <td>{d.employee?.name}</td> */}
                                     <td>{d.total_amount}</td>
                                     <td>{d.discount}</td>
                                     <td>{d.vendor?.vendor_name}</td>
