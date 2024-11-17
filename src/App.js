@@ -211,9 +211,9 @@ function App() {
             <Expenseadd />
           </Protected>
         } />
-        <Route path={"/Paynow"} element={
+         <Route path={"/eventexpense/paynow/:event_id"} element={
           <Protected isSignedIn={isSignedIn} >
-            <Expenseadd />
+            <Paynow />
           </Protected>
         } />
 

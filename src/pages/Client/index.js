@@ -31,7 +31,7 @@ function Client() {
                                 <th scope="col">Contact No</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Address</th>
-                                <th scope="col">Total Event Amount</th>
+                                <th scope="col">Total Event Cost</th>
                                 <th scope="col">Total Payment</th>
                                 <th scope="col">Total Due</th>
                                 <th scope="col">Action</th>

@@ -173,168 +173,168 @@ function Paymentcount() {
                         </div>
                     </div>
 
-                    <section id="basic-vertical-layouts" >
-                        <div className="row match-height">
-                            <div className="col-12">
-                                <div className="card">
-                                    <div className="card-content">
-                                        <div className="card-body">
-                                            <form className="form form-vertical" onSubmit={handleSubmit}>
-                                                <div className="form-body">
-                                                    <div className="row" style={{ fontWeight: 'bold' }}>
+    <section id="basic-vertical-layouts" >
+        <div className="row match-height">
+            <div className="col-12">
+                <div className="card">
+                    <div className="card-content">
+                        <div className="card-body">
+                            <form className="form form-vertical" onSubmit={handleSubmit}>
+                                <div className="form-body">
+                                    <div className="row" style={{ fontWeight: 'bold' }}>
 
-                                                        <div className="col-4">
-                                                            <div className="form-group">
-                                                                <label for="event_id">Event</label>
-                                                                {event.length > 0 &&
-                                                                    <select className="form-control" id="event_id" name='event_id' defaultValue={inputs.event_id} onChange={handleChange}>
-                                                                        <option value="">Select Event</option>
-                                                                        {event.map((d, key) =>
-                                                                            <option value={d.id}>{d.event_details}</option>
-                                                                        )}
-                                                                    </select>
-                                                                }
-                                                            </div>
-                                                        </div>
+                                        <div className="col-4">
+                                            <div className="form-group">
+                                                <label for="event_id">Event</label>
+                                                {event.length > 0 &&
+                                                    <select className="form-control" id="event_id" name='event_id' defaultValue={inputs.event_id} onChange={handleChange}>
+                                                        <option value="">Select Event</option>
+                                                        {event.map((d, key) =>
+                                                            <option value={d.id}>{d.event_details}</option>
+                                                        )}
+                                                    </select>
+                                                }
+                                            </div>
+                                        </div>
 
-                                                        <div className="col-4">
-                                                            <div className="form-group">
-                                                                <label for="vendor_id">Vendor</label>
-                                                                {vendors.length > 0 &&
-                                                                    <select className="form-control" id="vendor_id" name='vendor_id' defaultValue={inputs.vendor_id} onChange={handleChange}>
-                                                                        <option value="">Select Vendor</option>
-                                                                        {vendors.map((d, key) =>
-                                                                            <option value={d.id}>{d.vendor_name}</option>
-                                                                        )}
-                                                                    </select>
-                                                                }
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-4">
-                                                            <div className="form-group">
-                                                                <label htmlFor="purchase_date">date</label>
-                                                                <input type="date" id="purchase_date" className="form-control" defultValue={inputs.purchase_date} name="purchase_date" onChange={handleChange} />
-                                                            </div>
-                                                        </div>
-                                                        <div className="col-12">
-                                                            <div className="form-group">
-                                                                <label for="addproduct"> Products</label>
-                                                                {items.length > 0 &&
-                                                                    <ReactSearchAutocomplete
-                                                                        items={items}
-                                                                        onSelect={handleOnSelect}
-                                                                        autoFocus
-                                                                        formatResult={formatResult}
-                                                                    />}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='row'>
-                                                        <table className='mt-3 table table-bordered' >
-                                                            <tr style={{ backgroundColor: '#e9ecef', fontWeight: 'bold' }}>
-                                                                <td>Name</td>
-                                                                <td>Qty</td>
-                                                                <td>Price</td>
-                                                                <td>Total</td>
-                                                            </tr>
-                                                            {Object.keys(cartitems).map(k => ({ id: k, ...cartitems[k] })).map(d => (
-                                                                <tr key={d.id}>
-                                                                    <td>{d.name}</td>
-                                                                    <td>
-                                                                        <input className='form-control' type="text" name="quantity" onChange={(e) => handleCartChange(e, d)} />
-                                                                    </td>
-                                                                    <td>
-                                                                        <input className='form-control' type="text" name="price" defaultValue={d.price} onChange={(e) => handleCartChange(e, d)} />
-                                                                    </td>
-                                                                    <td>
-                                                                        {d.subtotal}
-                                                                    </td>
-                                                                </tr>
-                                                            ))}
-                                                        </table>
-                                                    </div>
-                                                    <div className='row'>
-                                                        <div className="col-6 offset-6 d-flex justify-content-end">
-                                                            <table className='my-3 table table-bordered'>
-                                                                <tr>
-                                                                    <td style={{ fontWeight: 'bold' }}>Total:</td>
-                                                                    <td>{totalData.total}</td>
-                                                                    <td></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style={{ fontWeight: 'bold' }}>Discount:</td>
-                                                                    <td><input className='form-control' type="text" defaultValue={totalData.discount} name="discount" onChange={(e) => handleTotalChange(e)} /></td>
-                                                                    <td>{totalData.discountAmt}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style={{ fontWeight: 'bold' }}>Tax:</td>
-                                                                    <td><input className='form-control' type="text" defaultValue={totalData.tax} name="tax" onChange={(e) => handleTotalChange(e)} /></td>
-                                                                    <td>{totalData.taxAmt}</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td style={{ fontWeight: 'bold' }}>Grand Total:</td>
-                                                                    <td></td>
-                                                                    <td>{totalData.finalTotal}</td>
-                                                                </tr>
-                                                            </table>
-                                                        </div>
-                                                    </div>
+                                        <div className="col-4">
+                                            <div className="form-group">
+                                                <label for="vendor_id">Vendor</label>
+                                                {vendors.length > 0 &&
+                                                    <select className="form-control" id="vendor_id" name='vendor_id' defaultValue={inputs.vendor_id} onChange={handleChange}>
+                                                        <option value="">Select Vendor</option>
+                                                        {vendors.map((d, key) =>
+                                                            <option value={d.id}>{d.vendor_name}</option>
+                                                        )}
+                                                    </select>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div className="col-4">
+                                            <div className="form-group">
+                                                <label htmlFor="purchase_date">date</label>
+                                                <input type="date" id="purchase_date" className="form-control" defultValue={inputs.purchase_date} name="purchase_date" onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                        <div className="col-12">
+                                            <div className="form-group">
+                                                <label for="addproduct"> Products</label>
+                                                {items.length > 0 &&
+                                                    <ReactSearchAutocomplete
+                                                        items={items}
+                                                        onSelect={handleOnSelect}
+                                                        autoFocus
+                                                        formatResult={formatResult}
+                                                    />}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='row'>
+                                        <table className='mt-3 table table-bordered' >
+                                            <tr style={{ backgroundColor: '#e9ecef', fontWeight: 'bold' }}>
+                                                <td>Name</td>
+                                                <td>Qty</td>
+                                                <td>Price</td>
+                                                <td>Total</td>
+                                            </tr>
+                                            {Object.keys(cartitems).map(k => ({ id: k, ...cartitems[k] })).map(d => (
+                                                <tr key={d.id}>
+                                                    <td>{d.name}</td>
+                                                    <td>
+                                                        <input className='form-control' type="text" name="quantity" onChange={(e) => handleCartChange(e, d)} />
+                                                    </td>
+                                                    <td>
+                                                        <input className='form-control' type="text" name="price" defaultValue={d.price} onChange={(e) => handleCartChange(e, d)} />
+                                                    </td>
+                                                    <td>
+                                                        {d.subtotal}
+                                                    </td>
+                                                </tr>
+                                            ))}
+                                        </table>
+                                    </div>
+                                    <div className='row'>
+                                        <div className="col-6 offset-6 d-flex justify-content-end">
+                                            <table className='my-3 table table-bordered'>
+                                                <tr>
+                                                    <td style={{ fontWeight: 'bold' }}>Total:</td>
+                                                    <td>{totalData.total}</td>
+                                                    <td></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ fontWeight: 'bold' }}>Discount:</td>
+                                                    <td><input className='form-control' type="text" defaultValue={totalData.discount} name="discount" onChange={(e) => handleTotalChange(e)} /></td>
+                                                    <td>{totalData.discountAmt}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ fontWeight: 'bold' }}>Tax:</td>
+                                                    <td><input className='form-control' type="text" defaultValue={totalData.tax} name="tax" onChange={(e) => handleTotalChange(e)} /></td>
+                                                    <td>{totalData.taxAmt}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ fontWeight: 'bold' }}>Grand Total:</td>
+                                                    <td></td>
+                                                    <td>{totalData.finalTotal}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
 
-                                                    <div className='row' style={{ fontWeight: 'bold' }}>
-                                                        <div className='col-sm-6'>
-                                                            <div className="form-group">
-                                                                <label for="pay_type">Pay Type</label>
-                                                                {payType.length > 0 &&
-                                                                    <select className="form-control" id="pay_type" name='pay_type' defaultValue={inputs.pay_type} onChange={handleChange}>
-                                                                        <option value="">Select Pay Type</option>
-                                                                        {payType.map((d, key) =>
-                                                                            <option value={d.id}>{d.name}</option>
-                                                                        )}
-                                                                    </select>
-                                                                }
-                                                            </div>
-                                                        </div>
-                                                        <div className='col-sm-6'>
-                                                            <div className="form-group">
-                                                                <label for="amount">Amount</label>
-                                                                <input type="text" id="amount" className="form-control" defultValue={inputs.amount} name="amount" onChange={handleChange} />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='row' style={{ fontWeight: 'bold' }}>
-                                                        <div className='col-sm-4'>
-                                                            <div className="form-group">
-                                                                <label for="bank_name">Bank Name</label>
-                                                                <input type="text" id="bank_name" className="form-control" defultValue={inputs.bank_name} name="bank_name" onChange={handleChange} />
-                                                            </div>
-                                                        </div>
-                                                        <div className='col-sm-4'>
-                                                            <div className="form-group">
-                                                                <label for="check_number">Check Number</label>
-                                                                <input type="text" id="check_number" className="form-control" defultValue={inputs.check_number} name="check_number" onChange={handleChange} />
-                                                            </div>
-                                                        </div>
-                                                        <div className='col-sm-4'>
-                                                            <div className="form-group">
-                                                                <label for="check_date">Check Date</label>
-                                                                <input type="date" id="check_date" className="form-control" defultValue={inputs.check_date} name="check_date" onChange={handleChange} />
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className='row'>
-                                                        <div className="col-12 d-flex justify-content-end">
-                                                            <button type="submit" className="btn btn-primary mr-1 mb-1" style={{ backgroundColor: '#007bff', borderColor: '#007bff', borderRadius: '5px' }}>Submit</button>
-                                                            <button type="reset" className="btn btn-light-secondary mr-1 mb-1" style={{ backgroundColor: '#f8f9fa', borderColor: '#ced4da', borderRadius: '5px' }}>Reset</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
+                                    <div className='row' style={{ fontWeight: 'bold' }}>
+                                        <div className='col-sm-6'>
+                                            <div className="form-group">
+                                                <label for="pay_type">Pay Type</label>
+                                                {payType.length > 0 &&
+                                                    <select className="form-control" id="pay_type" name='pay_type' defaultValue={inputs.pay_type} onChange={handleChange}>
+                                                        <option value="">Select Pay Type</option>
+                                                        {payType.map((d, key) =>
+                                                            <option value={d.id}>{d.name}</option>
+                                                        )}
+                                                    </select>
+                                                }
+                                            </div>
+                                        </div>
+                                        <div className='col-sm-6'>
+                                            <div className="form-group">
+                                                <label for="amount">Amount</label>
+                                                <input type="text" id="amount" className="form-control" defultValue={inputs.amount} name="amount" onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='row' style={{ fontWeight: 'bold' }}>
+                                        <div className='col-sm-4'>
+                                            <div className="form-group">
+                                                <label for="bank_name">Bank Name</label>
+                                                <input type="text" id="bank_name" className="form-control" defultValue={inputs.bank_name} name="bank_name" onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                        <div className='col-sm-4'>
+                                            <div className="form-group">
+                                                <label for="check_number">Check Number</label>
+                                                <input type="text" id="check_number" className="form-control" defultValue={inputs.check_number} name="check_number" onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                        <div className='col-sm-4'>
+                                            <div className="form-group">
+                                                <label for="check_date">Check Date</label>
+                                                <input type="date" id="check_date" className="form-control" defultValue={inputs.check_date} name="check_date" onChange={handleChange} />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='row'>
+                                        <div className="col-12 d-flex justify-content-end">
+                                            <button type="submit" className="btn btn-primary mr-1 mb-1" style={{ backgroundColor: '#007bff', borderColor: '#007bff', borderRadius: '5px' }}>Submit</button>
+                                            <button type="reset" className="btn btn-light-secondary mr-1 mb-1" style={{ backgroundColor: '#f8f9fa', borderColor: '#ced4da', borderRadius: '5px' }}>Reset</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                    </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
                 </div>
             </div>
 
