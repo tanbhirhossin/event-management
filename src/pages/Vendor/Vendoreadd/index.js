@@ -13,7 +13,7 @@ function Vendoreadd() {
         axios.get(`${process.env.REACT_APP_API_URL}/vendor/${id}`).then(function(response) {
             setInputs(response.data.data);
             
-            document.getElementById('prioritystatusSelect').selectedIndex=response.data.data.status
+            // document.getElementById('prioritystatusSelect').selectedIndex=response.data.data.status
 
         });
     }
